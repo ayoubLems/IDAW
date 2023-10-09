@@ -101,4 +101,60 @@ h1 {
 .content h2 {
     color: #333;
 }
+/* Style du pied de page */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Style du lien dans le pied de page */
+footer a {
+    color: #ff6600; /* Orange vif */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Style général pour le texte du pied de page */
+footer p {
+    margin: 0;
+}
+/* Style de la section de blog */
+.blog {
+    padding: 20px;
+}
+
+.blog-post {
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.blog-post h3 {
+    color: #333;
+}
+
+.blog-post a {
+    color: #ff6600;
+    text-decoration: none;
+}
+
+.blog-post a:hover {
+    text-decoration: underline;
+}
+
+/* Style de la section de l'article */
+.image-container {
+    text-align: center; /* Centre l'image horizontalement */
+}
+
+/* Style de l'image centrée */
+.centered-image {
+    display: block;
+    margin: 0 auto; /* Centre l'image horizontalement */
+}
 
