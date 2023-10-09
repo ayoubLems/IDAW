@@ -1,10 +1,20 @@
+/* Style du corps de la page */
 body {
-    display: flex;
-    flex-direction: row;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
 }
 
+/* Style du titre */
+h1 {
+    text-align: center;
+    color: #ff6600; /* Orange vif */
+    margin-top: 20px;
+}
+
+/* Style du menu */
 .menu {
-    flex: 1;
     background-color: #333;
     color: #fff;
     padding: 20px;
@@ -22,13 +32,31 @@ body {
 .menu a {
     text-decoration: none;
     color: #fff;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
 }
 
-#currentpage {
-    background-color: #f00;
+/* Style de l'élément de menu actuellement sélectionné */
+.menu a.active {
+    background-color: #ff6600; /* Orange vif */
+    font-weight: bold;
+    color: #fff;
 }
 
+/* Style du contenu */
 .content {
-    flex: 2;
     padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style des liens dans le contenu */
+.content a {
+    color: #ff6600; /* Orange vif */
+    text-decoration: none;
+}
+
+.content a:hover {
+    text-decoration: underline;
 }
