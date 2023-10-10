@@ -1,21 +1,20 @@
 <?php
 function renderMenuToHTML($currentPageId) {
-    // un tableau qui définit la structure du site
     $mymenu = array(
-        // idPage titre
-        'index' => array('Accueil'),
-        'cv' => array('Cv'),
-        'projets' => array('Mes Projets')
+        'index' => 'Accueil',
+        'cv' => 'Cv',
+        'projets' => 'Mes projets'
     );
 
     echo '<nav class="menu">';
     echo '<ul>';
-    
-    foreach ($mymenu as $pageId => $pageParameters) {
-        // Vérifiez si la page actuelle correspond à la page en cours de traitement
-        $isCurrentPage = ($currentPageId === $pageId) ? ' id="currentpage"' : '';
 
-        echo '<li><a href="' . $pageId . '.php"' . $isCurrentPage . '>' . $pageParameters[0] . '</a></li>';
+    foreach($mymenu as $pageId => $pageParameters) {
+        if($pageId == $currentPageId) {
+            echo '<li><a id="currentpage" href="' . $pageId . '.php">' . $pageParameters . '</a></li>';
+        } else {
+            echo '<li><a href="' . $pageId . '.php">' . $pageParameters . '</a></li>';
+        }
     }
 
     echo '</ul>';
