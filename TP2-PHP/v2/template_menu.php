@@ -1,9 +1,10 @@
 <?php
 function renderMenuToHTML($currentPageId) {
     $mymenu = array(
-        'index' => 'Accueil',
+        'accueil' => 'Accueil',
         'cv' => 'Cv',
         'projets' => 'Mes projets'
+        
     );
 
     echo '<nav class="menu">';
