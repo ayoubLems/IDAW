@@ -4,13 +4,9 @@
     <div class="container">
         <header>
             <h1>Mon Site Web Personnel</h1>
-            <nav class="menu">
-                <ul>
-                    <li><a href="index.php">Accueil</a></li>
-                    <li><a href="cv.php">CV</a></li>
-                    <li><a href="projets.php" class="active">Projets</a></li>
-                </ul>
-            </nav>
+<?php
+   require_once('template_menu.php');
+?>
         </header>
         <div class="content">
             <section class="projects">
