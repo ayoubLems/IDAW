@@ -1,18 +1,12 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>CV</title>
-</head>
-<body>
+<?php
+   require_once('template_header.php');
+?>
     <h1>Mon CV</h1>
     <nav class="menu">
         <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="cv.html" class="active">CV</a></li>
-            <li><a href="projets.html">Projets</a></li>
+            <li><a href="index.php">Accueil</a></li>
+            <li><a href="cv.php" class="active">CV</a></li>
+            <li><a href="projets.php">Projets</a></li>
         </ul>
     </nav>
     <img src="linkedinpic.png" alt="Photo de profil" width="200" height="250">

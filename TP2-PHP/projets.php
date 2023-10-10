@@ -1,20 +1,14 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>Projets</title>
-</head>
-<body>
+<?php
+   require_once('template_header.php');
+?>
     <div class="container">
         <header>
             <h1>Mon Site Web Personnel</h1>
             <nav class="menu">
                 <ul>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="cv.html">CV</a></li>
-                    <li><a href="projets.html" class="active">Projets</a></li>
+                    <li><a href="index.php">Accueil</a></li>
+                    <li><a href="cv.php">CV</a></li>
+                    <li><a href="projets.php" class="active">Projets</a></li>
                 </ul>
             </nav>
         </header>
