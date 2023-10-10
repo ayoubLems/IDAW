@@ -30,9 +30,6 @@
     <p>Établissement : IMT Nord Europe</p>
     <p>Date d'obtention : 2024</p>
     
-    <footer>
-        <p>&copy; 2023 IMT Nord Europe</p>
-    </footer>
-</body>
-</html>
-
+<?php
+require_once('template_footer.php');
+?>

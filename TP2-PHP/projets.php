@@ -35,9 +35,6 @@
                 <!-- Vous pouvez ajouter plus de projets ici si nécessaire -->
             </section>
         </div>
-        <footer>
-            <p>&copy; 2023 IMT Nord Europe</p>
-        </footer>
-    </div>
-</body>
-</html>
+<?php
+    require_once('template_footer.php');
+?>
