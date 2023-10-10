@@ -5,8 +5,10 @@
         <header>
             <h1>Mon Site Web Personnel</h1>
 <?php
-   require_once('template_menu.php');
-?>
+    require_once('template_menu.php');
+    renderMenuToHTML('projets'); 
+ ?>
+
         </header>
         <div class="content">
             <section class="projects">

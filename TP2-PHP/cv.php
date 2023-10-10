@@ -2,13 +2,11 @@
    require_once('template_header.php');
 ?>
     <h1>Mon CV</h1>
-    <nav class="menu">
-        <ul>
-            <li><a href="index.php">Accueil</a></li>
-            <li><a href="cv.php" class="active">CV</a></li>
-            <li><a href="projets.php">Projets</a></li>
-        </ul>
-    </nav>
+    <?php
+        require_once('template_menu.php');
+        renderMenuToHTML('cv'); 
+    ?>
+
     <img src="linkedinpic.png" alt="Photo de profil" width="200" height="250">
 
     <p>Voici mon curriculum vitae.</p>

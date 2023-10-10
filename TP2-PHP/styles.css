@@ -23,26 +23,29 @@ h1 {
 .menu ul {
     list-style-type: none;
     padding: 0;
+    text-align: center; /* Centrer horizontalement les éléments du menu */
 }
 
 .menu li {
     margin-bottom: 10px;
+    display: inline-block;
+    margin-right: 20px;
 }
 
 .menu a {
     text-decoration: none;
     color: #fff;
-    display: block;
-    padding: 10px;
     border-radius: 5px;
 }
 
 /* Style de l'élément de menu actuellement sélectionné */
-.menu a.active {
-    background-color: #ff6600; /* Orange vif */
+#currentpage {
+    background-color: #ff6600;
     font-weight: bold;
     color: #fff;
+    font-size: 40px; /* Augmenter la taille de police de l'élément actif */
 }
+
 
 /* Style du contenu */
 .content {
