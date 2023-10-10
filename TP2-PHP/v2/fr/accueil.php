@@ -1,3 +1,6 @@
+<a href="index.php?page=accueil&lang=en">Anglais</a>
+
+
 <section class="about">
     <h2>À propos de moi</h2>
     <img src="profile.jpg" alt="Ma photo de profil" class="profile-image">
