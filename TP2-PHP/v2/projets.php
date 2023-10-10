@@ -1,15 +1,7 @@
 <?php
    require_once('template_header.php');
 ?>
-    <div class="container">
-        <header>
-            <h1>Mon Site Web Personnel</h1>
-<?php
-    require_once('template_menu.php');
-    renderMenuToHTML('projets'); 
- ?>
 
-        </header>
         <div class="content">
             <section class="projects">
                 <h2>Mes Projets</h2>

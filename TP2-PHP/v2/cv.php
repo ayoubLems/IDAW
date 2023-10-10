@@ -1,11 +1,6 @@
 <?php
    require_once('template_header.php');
 ?>
-    <h1>Mon CV</h1>
-    <?php
-        require_once('template_menu.php');
-        renderMenuToHTML('cv'); 
-    ?>
 
     <img src="linkedinpic.png" alt="Photo de profil" width="200" height="250">
 
