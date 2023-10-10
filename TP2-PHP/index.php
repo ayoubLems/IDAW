@@ -4,13 +4,11 @@
     <div class="container">
         <header>
             <h1>Mon Site Web Personnel</h1>
-            <nav class="menu">
-                <ul>
-                    <li><a href="index.php" class="active">Accueil</a></li>
-                    <li><a href="cv.php">CV</a></li>
-                    <li><a href="projets.php">Projets</a></li>
-                </ul>
-            </nav>
+        <?php
+        require_once('template_menu.php');
+        renderMenuToHTML('index');
+        ?>
+
         </header>
         <div class="content">
             <section class="about">
@@ -47,8 +45,6 @@
 
         </div>
     </div>
-    <footer>
-        <p>&copy; 2023 IMT Nord Europe</p>
-    </footer>
-</body>
-</html>
+<?php
+require_once('template_footer.php');
+?>
