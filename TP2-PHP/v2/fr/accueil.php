@@ -8,7 +8,7 @@
 </section>
 
 <section class="skills">
-    <h2>Mes compétences</h2>
+    <h2>Mes compétences</h2> 
     <ul>
         <li>Développement web front-end</li>
         <li>Conception d'interfaces utilisateur</li>
