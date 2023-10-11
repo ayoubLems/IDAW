@@ -11,9 +11,9 @@ $login = "anonymous";
 $errorText = "";
 $successfullyLogged = false;
 
-if(isset($_GET['login']) && isset($_GET['password'])) {
-    $tryLogin = $_GET['login'];
-    $tryPwd = $_GET['password'];
+if(isset($_POST['login']) && isset($_POST['password'])) { // Utilisation de $_POST
+    $tryLogin = $_POST['login'];
+    $tryPwd = $_POST['password'];
     
     // Si le login existe et le mot de passe correspond
     if(array_key_exists($tryLogin, $users) && $users[$tryLogin] == $tryPwd) {
