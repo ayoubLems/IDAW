@@ -3,7 +3,8 @@
 $users = array(
     // login => password
     'riri' => 'fifi',
-    'yoda' => 'maitrejedi'
+    'yoda' => 'maitrejedi',
+    'ayoub' => 'ayoub'
 );
 
 $login = "anonymous";
