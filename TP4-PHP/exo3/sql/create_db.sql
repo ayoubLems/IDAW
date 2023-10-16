@@ -26,8 +26,9 @@ SET time_zone = "+00:00";
 --
 -- Structure de la table `users`
 --
+DROP TABLE IF EXISTS `users`;
 
-CREATE TABLE `users` (
+CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL
@@ -37,12 +38,14 @@ CREATE TABLE `users` (
 -- Déchargement des données de la table `users`
 --
 
+
 INSERT INTO `users` (`id`, `name`, `email`) VALUES
 (1, 'alice', 'alice@example.com'),
 (2, 'bob', 'bob@example.com'),
 (3, 'charlie', 'charlie@example.com'),
 (4, 'david', 'david@example.com'),
 (5, 'eve', 'eve@example.com');
+
 
 --
 -- Index pour les tables déchargées

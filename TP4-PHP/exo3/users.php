@@ -23,7 +23,6 @@ $request->execute();
 
 $results = $request->fetchAll(PDO::FETCH_OBJ);
 
-// Affichage des données dans un tableau HTML
 echo "<table border='1'>";
 echo "<tr>";
 echo "<th>Id</th>";
@@ -32,7 +31,6 @@ echo "<th>Email</th>";
 echo "</tr>";
 foreach ($results as $user) {
 
-    // print_r($user);
     echo "<tr>";
     echo "<td>" . $user->id . "</td>";
     echo "<td>" . $user->name . "</td>";
@@ -41,6 +39,5 @@ foreach ($results as $user) {
 }
 echo "</table>";
 
-$pdo = NULL; // Fermer la connexion à la base de données
-
+$pdo = NULL; 
 ?>
