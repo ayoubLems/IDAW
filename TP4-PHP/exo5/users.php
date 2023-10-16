@@ -15,6 +15,8 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $erreur) {
     echo 'Erreur : ' . $erreur->getMessage();
+
+    
     exit;
 }
 
@@ -39,121 +41,10 @@ if(isset($_POST['action']) && $_POST['action'] == 'update') {
     $stmt->execute([$name, $email, $id]);
 }
 
+// Sélection des utilisateurs
 $request = $pdo->prepare("SELECT * from users");
 $request->execute();
 $results = $request->fetchAll(PDO::FETCH_OBJ);
-
-echo "<!DOCTYPE html>";
-echo "<html>";
-echo "<head>";
-echo "<title>Gestion des utilisateurs</title>";
-echo "<style>";
-
-
-echo "
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #EAEDED;
-    padding: 50px;
-    color: #333;
-}
-
-table {
-    width: 100%;
-    border-collapse: separate;
-    margin: 30px 0;
-    background-color: #FFFFFF;
-    box-shadow: 10px 10px 30px #D0D3D4, -10px -10px 30px #FFFFFF;
-    border-radius: 15px;
-    overflow: hidden;
-}
-
-th, td {
-    padding: 12px 18px;
-    border-bottom: 1px solid #F2F3F4;
-    text-align: left;
-}
-
-th {
-    background-color: #4A90E2; /* Blue color for headers */
-    color: #FFFFFF;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-}
-
-tr:last-child td {
-    border-bottom: none;
-}
-
-tr:nth-child(even) {
-    background-color: #FBFCFC;
-}
-
-tr:hover {
-    background-color: #F2F3F4;
-    cursor: default;
-}
-
-/* Stylized buttons */
-input[type=submit] {
-    padding: 10px 20px;
-    border: none;
-    background: #4A90E2; /* Blue color for buttons */
-    box-shadow: 6px 6px 12px #D0D3D4, -6px -6px 12px #FFFFFF;
-    color: #FFFFFF;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-    border-radius: 50px;
-    font-weight: 600;
-}
-
-input[type=submit]:hover {
-    background: #357ABD; /* Darker blue on hover */
-}
-
-input[type=submit]:active {
-    background: #2E64A5; /* Even darker blue for active state */
-}
-
-/* Stylized input fields */
-input[type=text], input[type=email] {
-    padding: 10px 18px;
-    margin: 0 12px;
-    background: #FFFFFF;
-    border: none;
-    border-radius: 25px;
-    box-shadow: 6px 6px 12px #D0D3D4, -6px -6px 12px #FFFFFF;
-    font-size: 16px;
-    color: #333;
-    transition: box-shadow 0.3s;
-}
-
-input[type=text]:focus, input[type=email]:focus {
-    box-shadow: inset 4px 4px 8px #D0D3D4, inset -4px -4px 8px #FFFFFF;
-    outline: none;
-}
-
-h3 {
-    font-size: 32px;
-    margin-bottom: 24px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    color: #4A90E2; /* Blue color for titles */
-}
-
-form {
-    background-color: #FFFFFF;
-    padding: 35px;
-    border-radius: 15px;
-    box-shadow: 10px 10px 30px #D0D3D4, -10px -10px 30px #FFFFFF;
-    margin-bottom: 40px;
-}
-";
-
-echo "</style>";
-echo "</head>";
-
 
 // Affichage des données dans un tableau HTML
 echo "<table border='1'>";
