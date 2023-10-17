@@ -1,0 +1,150 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: User Management API
+  description: API for creating, reading, updating, and deleting users.
+  contact:
+    name: API Support Team
+    email: support@yourdomain.com
+    url: https://www.yourdomain.com/support
+
+servers:
+  - url: http://api.yourdomain.com/v1
+    description: Production Server
+
+paths:
+  /users.php:
+    get:
+      summary: Retrieve all users
+      description: Returns a list of all users in the system.
+      responses:
+        '200':
+          description: A list of users.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+        '500':
+          description: Internal server error.
+    post:
+      summary: Create a new user
+      description: Creates a new user and returns the created user's details.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: The user's full name.
+                email:
+                  type: string
+                  description: The user's email address.
+                  format: email
+      responses:
+        '201':
+          description: User was successfully created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '400':
+          description: Bad request. Required fields might be missing or data format might be wrong.
+        '500':
+          description: Internal server error.
+
+  /users.php/{id}:
+    get:
+      summary: Retrieve a single user
+      description: Returns details of a user by their ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID of the user to fetch.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: A single user object.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '404':
+          description: User not found.
+        '500':
+          description: Internal server error.
+    put:
+      summary: Update a user
+      description: Updates the details of a user by their ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID of the user to update.
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: Updated name of the user.
+                email:
+                  type: string
+                  description: Updated email address of the user.
+                  format: email
+      responses:
+        '200':
+          description: User was successfully updated.
+        '400':
+          description: Bad request. Required fields might be missing or data format might be wrong.
+        '404':
+          description: User not found.
+        '500':
+          description: Internal server error.
+    delete:
+      summary: Delete a user
+      description: Deletes a user by their ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID of the user to delete.
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: User was successfully deleted.
+        '404':
+          description: User not found.
+        '500':
+          description: Internal server error.
+
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Unique identifier for the user.
+          example: 1
+        name:
+          type: string
+          description: Full name of the user.
+          example: John Doe
+        email:
+          type: string
+          description: Email address of the user.
+          format: email
+          example: john.doe@example.com
