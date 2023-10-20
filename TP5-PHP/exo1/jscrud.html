@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+    <title>tabletest</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 3em;
+            background-color: #f6f8fa;
+        }
+        
+        .table {
+            width: 100%;
+            margin: 2em 0;
+            border-collapse: collapse;
+        }
+        
+        .table,
+        .table th,
+        .table td {
+            border: 1px solid #e1e4e8;
+        }
+        
+        .table th,
+        .table td {
+            padding: 0.5em 1em;
+            text-align: left;
+        }
+        
+        .table th {
+            background-color: #0366d6;
+            color: white;
+        }
+        
+        .table tbody tr:hover {
+            background-color: #f6f8fa;
+        }
+        
+        form {
+            background-color: white;
+            padding: 1em 2em;
+            border: 1px solid #e1e4e8;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.5em 1em;
+            border: 1px solid #e1e4e8;
+            border-radius: 4px;
+            margin-bottom: 1em;
+        }
+        
+        .btn {
+            background-color: #0366d6;
+            color: white;
+            padding: 0.5em 1.5em;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #024ea2;
+        }
+        
+        .btn-primary.form-control {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nom</th>
+                <th scope="col">Prenom</th>
+                <th scope="col">Date de naissance</th>
+                <th scope="col">Aime le cours Web</th>
+                <th scope="col">Remarques</th>
+                <th scope="col">CRUD</th>
+            </tr>
+
+        </thead>
+        <tbody id="studentsTableBody">
+        </tbody>
+    </table>
+    <form id="addStudentForm" action="" onsubmit="onFormSubmit(event);">
+
+        <div class="form-group row">
+            <label for="inputNom" class="col-sm-2 col-form-label">Nom*</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="inputNom" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputPrenom" class="col-sm-2 col-form-label">Prénom</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="inputPrenom">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputDateNaissance" class="col-sm-2 col-form-label">Date de naissance</label>
+            <div class="col-sm-3">
+                <input type="date" class="form-control" id="inputDateNaissance">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputAimeLeCours" class="col-sm-2 col-form-label">Adore le cours</label>
+            <div class="col-sm-3">
+                <input type="checkbox" id="inputAimeLeCours">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputRemarques" class="col-sm-2 col-form-label">Remarques</label>
+            <div class="col-sm-3">
+                <textarea class="form-control" id="inputRemarques" rows="3"></textarea>
+            </div>
+        </div>
+        <div class="form-group row">
+            <span class="col-sm-2"></span>
+            <div class="col-sm-2">
+                <button type="submit" class="btn btn-primary form-control">Submit</button>
+            </div>
+        </div>
+
+
+
+    </form>
+    <script>
+        function onFormSubmit(event) {
+            // prevent the form to be sent to the server
+            event.preventDefault();
+
+            let nom = $("#inputNom").val();
+            let prenom = $("#inputPrenom").val();
+            let dateNaissance = $("#inputDateNaissance").val();
+            let aimeLeCours = $("#inputAimeLeCours").is(':checked') ? "Oui" : "Non";
+            let remarques = $("#inputRemarques").val();
+
+            // Check if the "Nom" field has a value
+            if (nom) {
+                $("#studentsTableBody").append(`
+            <tr>
+                <td>${nom}</td>
+                <td>${prenom}</td>
+                <td>${dateNaissance}</td>
+                <td>${aimeLeCours}</td>
+                <td>${remarques}</td>
+                <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+            </tr>
+        `);
+
+                // Optional: clear the input fields after adding
+                $("#addStudentForm").trigger("reset");
+            } else {
+                alert('Veuillez remplir le champ "Nom".');
+            }
+        }
+    </script>
+
+</body>
+
+</html>
