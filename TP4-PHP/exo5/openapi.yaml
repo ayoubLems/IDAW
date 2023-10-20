@@ -5,12 +5,9 @@ info:
   description: API for creating, reading, updating, and deleting users.
   contact:
     name: API Support Team
-    email: support@yourdomain.com
-    url: https://www.yourdomain.com/support
+    email: ayoub.lemsoudi@etu.imt-nord-europe.fr
+    url: https://www.restapitutorial.com
 
-servers:
-  - url: http://api.yourdomain.com/v1
-    description: Production Server
 
 paths:
   /users.php:
